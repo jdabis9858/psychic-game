@@ -4,6 +4,7 @@ var wins = 0
 var losses = 0
 var guess = ""
 var compnmbr = ""
+var past = [];
  
 
 document.getElementById("start").onclick = function() { 
@@ -20,7 +21,8 @@ document.getElementById("start").onclick = function() {
          alert("you win");
         wins = wins + 1;
         document.getElementById("wins2").innerHTML = wins;
-        document.getElementById("past").innerHTML = guess;
+        past.push(guess);
+        document.getElementById("past2").innerHTML = past;
         console.log(wins)
         
     }
@@ -28,7 +30,8 @@ document.getElementById("start").onclick = function() {
         alert("you lose");
         losses = losses + 1;
         document.getElementById("losses2").innerHTML = losses;
-        document.getElementById("past").innerHTML = guess;
+        past.push(guess);
+        document.getElementById("past2").innerHTML = past;
         
     }
 
